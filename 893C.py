@@ -32,6 +32,7 @@ def union(a,b):
 for i in range(n):
 	a,b=map(int,input().split())
 	union(a-1,b-1)
+	union(b-1,a-1)
 	# print(parent,a-1,b-1)
 ans=0
 pset=set()
