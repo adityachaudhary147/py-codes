@@ -5,34 +5,23 @@ sys.stdout = open('output.out', 'w')
 
 
 
-
+from collections import defaultdict
 #start the code from here
 
-t=int(input())
-for i in range(t):
-	n=int(input())
-	a=int(input())
-	# sys.stdout.flush()
-	s=(2*(10**n))+a
-	# sys.stdout.flush()
-	print(s)
-	sys.stdout.flush()
-	s=s-a
-	# sys.stdout.flush()
-	b=int(input())
-	s=s-((10**n))
-	print((10**n)-b)
-	sys.stdout.flush()
-	d=int(input())
-	s=s-10**n
-	print(10**n-d)
-	sys.stdout.flush()
 
-	rw=int(input())
-	if rw==1:
-		continue
-	else:
-		break
+n,k=map(int,input().split())
 
+def dfs(a,b):
+	for e in gr[a]:
+		if e!=b:
+			dfs(a,b)
+			
 
-
+l=[[0] for i in range(n)]
+gr=defaultdict(list)
+for i in range(n-1):
+	a,b=map(int,input().split())
+	a=a-1
+	b=b-1
+	gr[a].append(b)
+	gr[b].append(a)

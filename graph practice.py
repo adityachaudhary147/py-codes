@@ -11,6 +11,7 @@ from collections import defaultdict
 t=int(input())
 
 g=defaultdict(list)
+
 l=list(map(int,input().split()))
 c=list(map(int,input().split()))
 for i in range(t-1):
